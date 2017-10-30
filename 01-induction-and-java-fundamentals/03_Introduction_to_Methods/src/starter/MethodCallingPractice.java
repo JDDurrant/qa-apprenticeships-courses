@@ -46,7 +46,16 @@ public class MethodCallingPractice {
 		// to initialise one of the variables defined above for example
 
 		// Example statement--> alice();
-		
+
+		alice();
+		beatrice(21);
+		catherine(1.65, 2);
+		dashmi("Bus Driver", 3, 24.5f);
+		eleanor("Alice", 1);
+		eleanor("Wales", "Alice", 1);
+		fiona(24);
+		georgina('S', "Smith");
+
 		// remember
 		// 1st param - a literal
 		// 2nd param - a variable
@@ -59,7 +68,7 @@ public class MethodCallingPractice {
 	}
 
 	private static void whenYouHaveTime() {
-		
+
 		// This project has a class called Countries.
 		// It contains 5 methods that each match a Country Name.
 		// Call a few of them and display what they return
@@ -68,7 +77,7 @@ public class MethodCallingPractice {
 
 		// Example
 		//System.out.println("\nChile - " + Countries.Chile());
-		
+
 		System.out.println("\nChile - ");
 		System.out.println("\nRussia - ");
 		System.out.println("\nMongolia - ");

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/01_Introduction/01_Introduction.iml" filepath="$PROJECT_DIR$/01_Introduction/01_Introduction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02_Java_Basics/02_Java_Basics.iml" filepath="$PROJECT_DIR$/02_Java_Basics/02_Java_Basics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/03_Introduction_to_Methods/03_Introduction_to_Methods.iml" filepath="$PROJECT_DIR$/03_Introduction_to_Methods/03_Introduction_to_Methods.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04_GettingStartedWithConditionals/04_GettingStartedWithConditionals.iml" filepath="$PROJECT_DIR$/04_GettingStartedWithConditionals/04_GettingStartedWithConditionals.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05_MoreConditionals/05_MoreConditionals.iml" filepath="$PROJECT_DIR$/05_MoreConditionals/05_MoreConditionals.iml" />
+      <module fileurl="file://$PROJECT_DIR$/06_Loops/06_Loops.iml" filepath="$PROJECT_DIR$/06_Loops/06_Loops.iml" />
+      <module fileurl="file://$PROJECT_DIR$/07_Arrays/07_Arrays.iml" filepath="$PROJECT_DIR$/07_Arrays/07_Arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/08_Types_GettingStarted/08_Types_GettingStarted.iml" filepath="$PROJECT_DIR$/08_Types_GettingStarted/08_Types_GettingStarted.iml" />
+      <module fileurl="file://$PROJECT_DIR$/09_Types_Fields_Methods/09_Types_Fields_Methods.iml" filepath="$PROJECT_DIR$/09_Types_Fields_Methods/09_Types_Fields_Methods.iml" />
+      <module fileurl="file://$PROJECT_DIR$/10_Types_MoreOnMethods/10_Types_MoreOnMethods.iml" filepath="$PROJECT_DIR$/10_Types_MoreOnMethods/10_Types_MoreOnMethods.iml" />
+      <module fileurl="file://$PROJECT_DIR$/11_Types_Misc/11_Types_Misc.iml" filepath="$PROJECT_DIR$/11_Types_Misc/11_Types_Misc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/12_Collections_Generics/12_Collections_Generics.iml" filepath="$PROJECT_DIR$/12_Collections_Generics/12_Collections_Generics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/13_Intro_To_Testing/13_Intro_To_Testing.iml" filepath="$PROJECT_DIR$/13_Intro_To_Testing/13_Intro_To_Testing.iml" />
+    </modules>
+  </component>
+</project>

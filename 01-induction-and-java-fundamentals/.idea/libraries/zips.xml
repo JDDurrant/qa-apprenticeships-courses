@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="zips">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/zips/02_Java_Basics.zip!/" />
+      <root url="jar://$PROJECT_DIR$/zips/10_Types_MoreOnMethods.zip!/" />
+      <root url="jar://$PROJECT_DIR$/zips/12_Collections_Generics.zip!/" />
+      <root url="jar://$PROJECT_DIR$/zips/04_GettingStartedWithConditionals.zip!/" />
+      <root url="jar://$PROJECT_DIR$/zips/05_MoreConditionals.zip!/" />
+      <root url="jar://$PROJECT_DIR$/zips/01_Introduction.zip!/" />
+      <root url="jar://$PROJECT_DIR$/zips/08_Types_GettingStarted.zip!/" />
+      <root url="jar://$PROJECT_DIR$/zips/09_Types_Fields_Methods.zip!/" />
+      <root url="jar://$PROJECT_DIR$/zips/11_Types_Misc.zip!/" />
+      <root url="jar://$PROJECT_DIR$/zips/07_Arrays.zip!/" />
+      <root url="jar://$PROJECT_DIR$/zips/13_Intro_To_Testing.zip!/" />
+      <root url="jar://$PROJECT_DIR$/zips/03_Introduction_to_Methods.zip!/" />
+      <root url="jar://$PROJECT_DIR$/zips/06_Loops.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
