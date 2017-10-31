@@ -65,6 +65,8 @@ public class MethodCallingPractice {
 		// call both versions of the 1 method of the 7 that is overloaded
 		// one method returns true/false, think of an appropriate display
 
+		whenYouHaveTime();
+
 	}
 
 	private static void whenYouHaveTime() {
@@ -78,11 +80,11 @@ public class MethodCallingPractice {
 		// Example
 		//System.out.println("\nChile - " + Countries.Chile());
 
-		System.out.println("\nChile - ");
-		System.out.println("\nRussia - ");
-		System.out.println("\nMongolia - ");
-		System.out.println("\nZimbabwe - ");
-		System.out.println("\nFinland - ");
+		System.out.println("\nChile - " + Countries.Chile());
+		System.out.println("\nRussia - " + Countries.Russia());
+		System.out.println("\nMongolia - " + Countries.Mongolia());
+		System.out.println("\nZimbabwe - " + Countries.Zimbabwe());
+		System.out.println("\nFinland - " + Countries.Finland());
 	}
 
 	private static void alice() {
