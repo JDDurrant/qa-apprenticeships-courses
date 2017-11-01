@@ -31,6 +31,12 @@ public class Prompt {
 		return scan.nextDouble();
 	}
 
+	public static double getCurrency(String message) {
+
+		customPrompt(message, "£");
+		return scan.nextDouble();
+	}
+
 	public static boolean getBoolean(String message) {
 
 		fullPrompt(message);
@@ -45,6 +51,11 @@ public class Prompt {
 	private static void slimPrompt(String message) {
 
 		System.out.printf("%s: ", message);
+	}
+
+	private static void customPrompt(String message, String prompt) {
+
+		System.out.printf("%s\n%s", message, prompt);
 	}
 
 	public static void pause(String message) {
