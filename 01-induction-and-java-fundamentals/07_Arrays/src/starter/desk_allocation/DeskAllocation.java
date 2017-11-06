@@ -1,4 +1,4 @@
-package starter;
+package starter.desk_allocation;
 
 import java.util.Arrays;
 
@@ -18,10 +18,10 @@ public class DeskAllocation {
 
 		displayDeskMap();
 
-		searchDesks("Jaz");
-		searchDesks("Nick");
+//		searchDesks("Jaz");
+//		searchDesks("Nick");
 
-		searchDesks();
+		CLI.searchDesks();
 
 	}
 
@@ -76,18 +76,11 @@ public class DeskAllocation {
 		System.out.println();
 	}
 
-	public static void searchDesks() {
-
-		System.out.println();
-		String name = Prompt.getString("Enter the name of a student to find their desk.");
-		searchDesks(name);
-
-		searchDesks();
-	}
-
 	public static void searchDesks(String name) {
 
 		boolean exists = Arrays.asList(names).contains(name);
+
+		CLI.commandCheck(name);
 
 		if(!exists) {
 			System.out.printf("%s is not in this class.\n", name);
@@ -114,7 +107,12 @@ public class DeskAllocation {
 
 	public static void clearAllDesks() {
 
+		for (int row = 0; row < deskNames.length; row++) {
 
+			for (int col = 0; col < deskNames[row].length; col++) {
+
+				deskNames[row][col] = null;
+			}
+		}
 	}
-
 }

@@ -1,17 +1,17 @@
 package starter;
 
-class Program {
+public class Program {
 	public static void main(String[] args) {
-		// Uncomment these calls as instructed in 
+		// Uncomment these calls as instructed in
 		// the exercise guide
 
 //		testRefType();
 //		testValueType();
-//		
-//		
-//		
-//		testIntArray();
-//		testAccountArray();
+//
+//
+//
+		testIntArray();
+		testAccountArray();
 
 	}
 
@@ -39,10 +39,10 @@ class Program {
 		ac.deposit(100.0);
 	}
 
-	
-	
-	
-	
+
+
+
+
 	private static int num1, num2;
 
 	private static void displayInts() {
@@ -66,13 +66,15 @@ class Program {
 		i++;
 	}
 
-	
+
 	// ***********
-	
+
 	private static void testIntArray() {
 		int[] ages = { 13, 15, 17 };
 		processAges(ages);
-		System.out.println(ages[1]); // 15 or 25
+		System.out.println(ages[1]); // 15
+		// Correction: 25 - although integers are primitive, arrays are complex. Therefore, a reference variable was passed into
+		// processAges, not a value variable.
 	}
 
 	private static void processAges(int[] ages) {
@@ -83,7 +85,7 @@ class Program {
 		Account[] accs = { new Account(100.00, "Fred"),
 				           new Account(200.00, "Jazz") };
 		processAccounts(accs);
-		System.out.println(accs[0].getHolder()); // Fred or Jazz?
+		System.out.println(accs[0].getHolder()); // Jazz
 	}
 
 	private static void processAccounts(Account[] accs) {
