@@ -1,4 +1,4 @@
-package Solution.Finance;
+package solution.Finance;
 
 public class Account {
 	private String holder;

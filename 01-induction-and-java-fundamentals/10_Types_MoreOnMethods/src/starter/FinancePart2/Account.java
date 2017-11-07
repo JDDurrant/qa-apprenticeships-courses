@@ -10,9 +10,10 @@ public class Account {
 	private static double overdraftLimit = 500;
 
 	public Account(String name, double balance) {
-		holder = name;
-		this.balance = balance;
-		accNo = String.format("SA-%04d", ++nxtAccNo);
+
+		setHolder(name);
+		setBalance(balance);
+		setAccNo(String.format("SA-%04d", ++nxtAccNo));
 	}
 
 	public Account(String name) {
@@ -20,27 +21,14 @@ public class Account {
 
 	}
 
-	public String getDetails() {
-
-		return String.format("%s\t%s\t%.2f", accNo, holder, balance);
-	}
-
-	public double getBalance() {
-		return balance;
-	}
-
-	public String getHolder() {
-		return holder;
-	}
-
 	public void deposit(double amt) {
-		balance += amt;
+		setBalance(getBalance() + amt);
 	}
 
 	public boolean withdraw(double amt) {
 		boolean result = false;
-		if (amt <= this.balance + Account.overdraftLimit) {
-			balance -= amt;
+		if (amt <= getTotalFundsAvailable()) {
+			setBalance(getBalance() - amt);
 			result = true;
 		}
 		return result;
@@ -55,5 +43,52 @@ public class Account {
 		}
 		System.out.printf("Transfer Successful: %s\n", result ? "YES" : "NO");
 		return result;
+	}
+
+	public String getDetails() {
+		return String.format("%s\t%s\t%.2f", getAccNo(), getHolder(), getBalance());
+	}
+
+	public double getTotalFundsAvailable() {
+		return getBalance() + getOverdraftLimit();
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public String getHolder() {
+		return holder;
+	}
+
+	public String getAccNo() {
+		return accNo;
+	}
+
+
+	private void setAccNo(String accNo) {
+		this.accNo = accNo;
+	}
+
+
+	private void setHolder(String holder) {
+		this.holder = holder;
+	}
+
+
+	private void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	public static int getNxtAccNo() {
+		return ++nxtAccNo;
+	}
+
+	public static double getOverdraftLimit() {
+		return overdraftLimit;
+	}
+
+	public static void setOverdraftLimit(double overdraftLimit) {
+		if(overdraftLimit >= 0) Account.overdraftLimit = overdraftLimit;
 	}
 }

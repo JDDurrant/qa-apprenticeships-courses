@@ -4,6 +4,8 @@ package starter.FinancePart2;
 public class Program {
 
 	public static void main(String[] args) {
+		Account.setOverdraftLimit(700);
+
 		Account ac1, ac2;
 		ac1 = new Account("Fred", 100);
 		ac2 = new Account("Susy");
@@ -30,13 +32,11 @@ public class Program {
 			studentAccs[i] = new Account(names[i],
 					(int) (Math.random() * 100) + 1);
 		}
-		for (Account a : studentAccs) {
-			System.out.println(a.getDetails());
-		}
+		listAccounts(studentAccs);
 		for (int i = 0; i < studentAccs.length; i++) {
 			int transferAmt = studentAccs[i].getHolder().length();
 			if (i < studentAccs.length - 1) {
-				
+
 				Account.transfer(studentAccs[i], studentAccs[i + 1],
 						                               transferAmt);
 			}
@@ -45,8 +45,12 @@ public class Program {
 						                               transferAmt);
 			}
 		}
-		for (Account a : studentAccs) {
-			System.out.println(a.getDetails());
+		listAccounts(studentAccs);
+	}
+
+	private static void listAccounts(Account[] accs) {
+		for (Account a : accs) {
+			System.out.printf("%s\tAvailable funds: %.2f\n", a.getDetails(), a.getTotalFundsAvailable());
 		}
 	}
 

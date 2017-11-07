@@ -1,4 +1,4 @@
-package Solution.Finance;
+package solution.Finance;
 
 public class Program {
 
@@ -35,7 +35,7 @@ public class Program {
 		for (int i = 0; i < studentAccs.length; i++) {
 			int transferAmt = studentAccs[i].getHolder().length();
 			if (i < studentAccs.length - 1) {
-				
+
 				Account.transfer(studentAccs[i], studentAccs[i + 1],
 						                               transferAmt);
 			}
