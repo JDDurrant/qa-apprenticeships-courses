@@ -13,20 +13,27 @@ class Program {
 
     private static void testingWhenOnlyPence() {
     	Money
-    		m1 = new Money(99),
-    		m2 = new Money(0),
-    		m3 = new Money(-1),
-    		m4 = new Money(100);
+    		m1 = new Money(100),
+    		m2 = new Money(99),
+    		m3 = new Money(0),
+    		m4 = new Money(-1);
 
-    	System.out.println("Constructor testing...");
-    	System.out.printf("Expected: %s; Actual: %s\n", "£0.99", m1.getCurrentMoney());
-    	System.out.printf("Expected: %s; Actual: %s\n", "£0.00", m2.getCurrentMoney());
-    	System.out.printf("Expected: %s; Actual: %s\n", "Error", m3.getCurrentMoney());
-    	System.out.printf("Expected: %s; Actual: %s\n", "£1.00", m4.getCurrentMoney());
+    	m1.addPennies(100);
+    	m2.addPennies(50);
+    	m3.addPennies(0);
+    	m4.addPennies(-1);
 
+    	check(m1, "£2.00");
+    	check(m2, "£1.49");
+    	check(m3, "£0.00");
+    	check(m4, "Error");
     }
 
     private static void testingWhenPoundsAndPence() {
 
+    }
+
+    private static void check(Money money, String expected) {
+    	System.out.printf("Expected: %s; Actual: %s\n", expected, money.getCurrentMoney());
     }
   }

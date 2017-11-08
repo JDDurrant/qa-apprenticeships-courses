@@ -1,62 +1,73 @@
 package starter.WorkingWithMoney;
 
 public class Money {
-
+//	instance variables
 	private int pounds;
 	private int pence;
-	private boolean validMoney;
 
-	public Money(int pennies) {
+//	constructor methods
+	public Money(int pounds, int pennies) {
+		setPounds(pounds);
 		setPence(pennies);
 	}
 
-	public String getCurrentMoney() {
-		if(getValidMoney())
-			return String.format("£%d.%02d", getPounds(), getPence());
-		else
-			return "Error";
+	public Money(int pennies) {
+		this(0, pennies);
 	}
 
-	public int getPounds() {
-		return pounds;
+//	custom methods
+	public boolean testValidMoney() {
+
+		if(pounds >= 0 && pence >= 0)
+			return true;
+		else
+			return false;
+	}
+
+//	setter methods
+	public void addPennies(int amt) {
+
+		Money money = new Money(amt);
+
+		if(testValidMoney() && money.testValidMoney())
+			setPence(getPence() + amt);
+	}
+
+	public void addPounds(int amt) {
+
+		Money money = new Money(amt, 0);
+
+		if(testValidMoney() && money.testValidMoney())
+			setPounds(getPounds() + amt);
+	}
+
+	public void setPence(int pence) {
+
+		while(pence >= 100) {
+			pounds++;
+			pence -= 100;
+		}
+
+		this.pence = pence;
 	}
 
 	public void setPounds(int pounds) {
 		if(pounds >= 0) this.pounds = pounds;
 	}
 
+	//	getter methods
+	public String getCurrentMoney() {
+		if(testValidMoney())
+			return String.format("£%d.%02d", getPounds(), getPence());
+		else
+			return "Error";
+	}
+
 	public int getPence() {
 		return pence;
 	}
 
-	public void setPence(int pence) {
-
-//		while(pence >= 100) {
-//			pounds++;
-//			pence -= 100;
-//		}
-
-		if(pence >= 0 && pence < 100)
-			setValidMoney();
-		else
-			setInvalidMoney();
-
-		this.pence = pence;
-	}
-
-	public boolean getValidMoney() {
-		return validMoney;
-	}
-
-	public void setValidMoney(boolean validMoney) {
-		this.validMoney = validMoney;
-	}
-
-	public void setValidMoney() {
-		setValidMoney(true);
-	}
-
-	public void setInvalidMoney() {
-		setValidMoney(false);
+	public int getPounds() {
+		return pounds;
 	}
 }
