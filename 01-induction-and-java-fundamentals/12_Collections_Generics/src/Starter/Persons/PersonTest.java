@@ -4,6 +4,8 @@ import java.util.*;
 
 public class PersonTest {
 
+	private static ArrayList<Person> people;
+
 	private static String[] testNames =
 		{ "Holland", "Turner", "Powell", "Vicious", "Lyndon", "Spears",
 		  "William", "Wire", "Groul", "Love", "Jett", "Lopez" };
@@ -26,7 +28,7 @@ public class PersonTest {
 
 		// Define and create a ArrayList<E> with an
 		// initial capacity of ten objects.
-		ArrayList<Person> people = new ArrayList<>(10);
+		people = new ArrayList<>(10);
 		// This capacity is set in order to demonstrate that it can be changed, unlike traditional arrays.
 
 		// Fill the collection with new Person objects. Use a 'for' loop.
@@ -40,29 +42,33 @@ public class PersonTest {
 
 		// Print original contents of array
 		System.out.println("\nThe original list of people is:\n");
-		peopleWriter(people);
+		peopleWriter();
 
 		// Add yourself to be the sixth person in the list
 		Person jackass = new Person("Jack", 22);
 		people.add(5, jackass);
 
 		System.out.println("\nThe list of people with me inserted is:\n");
-		peopleWriter(people);
+		peopleWriter();
 
 		// Use get and/or set to print the name and increment
 		// the age of the 6th person
 		System.out.println("\n6th person is..");
-		System.out.println(people.get(5).getDetails());
 
+		Person jack = people.get(5);
+		System.out.println(jack.getDetails());
+		jack.setAge(jack.getAge() + 1);
+
+		System.out.println();
+		peopleWriter();
 
 		System.out.println("\nThe list of people after my birthday is:\n");
-
+//		TODO Create new ArrayList with people below a certain age.
 	}
 
-	private static void peopleWriter(ArrayList<Person> people) {
+	private static void peopleWriter() {
 		for(Person person : people) {
 			System.out.println(person.getDetails());
 		}
 	}
-
 }

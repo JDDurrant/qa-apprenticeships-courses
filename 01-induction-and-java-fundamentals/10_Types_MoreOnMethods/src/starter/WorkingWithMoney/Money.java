@@ -26,7 +26,7 @@ public class Money {
 
 //	setter methods
 	public void addPennies(int amt) {
-
+//		TODO Do something about this code repetition
 		Money money = new Money(amt);
 
 		if(testValidMoney() && money.testValidMoney())
@@ -39,6 +39,22 @@ public class Money {
 
 		if(testValidMoney() && money.testValidMoney())
 			setPounds(getPounds() + amt);
+	}
+
+	public void subPence(int amt) {
+
+		Money money = new Money(amt, 0);
+
+		if(testValidMoney() && money.testValidMoney())
+			System.out.println("This method isn't ready yet.");
+	}
+
+	public void subPounds(int amt) {
+
+		Money money = new Money(amt, 0);
+
+		if(testValidMoney() && money.testValidMoney())
+			System.out.println("This method isn't ready yet.");
 	}
 
 	public void setPence(int pence) {
