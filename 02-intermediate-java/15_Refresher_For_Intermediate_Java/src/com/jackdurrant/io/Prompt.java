@@ -1,4 +1,4 @@
-package com.jackdurrant.house;
+package com.jackdurrant.io;
 
 import java.io.IOException;
 import java.util.Scanner;

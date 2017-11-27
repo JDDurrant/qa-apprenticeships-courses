@@ -1,5 +1,7 @@
 package com.jackdurrant.house;
 
+import com.jackdurrant.io.Prompt;
+
 public class Location {
 
 	String country;

@@ -1,4 +1,4 @@
-package com.qa.file_handler;
+package com.jackdurrant.io;
 
 import java.io.*;
 import java.nio.channels.FileChannel;
@@ -7,7 +7,7 @@ import javax.swing.*;
 
 public class FileHandler
 {
-	private static void WriteToFile(String fileName, boolean append) throws IOException
+	private static void write(String fileName, boolean append) throws IOException
 	{
 		final FileWriter outputFile = new FileWriter(fileName, append);
 		final BufferedWriter outputBuffer = new BufferedWriter(outputFile);
@@ -23,7 +23,17 @@ public class FileHandler
 		printstream.close();
 	}
 
-	public static void ReadFile(String fileName) throws IOException
+	public static void writeToFile(String fileName) throws IOException
+	{
+		write(fileName, false);
+	}
+
+	public static void addToFile(String fileName) throws IOException
+	{
+		write(fileName, true);
+	}
+
+	public static void readFirstTwoLines(String fileName) throws IOException
 	{
 		final FileReader inputFile = new FileReader(fileName);
 		final BufferedReader inputBuffer = new BufferedReader(inputFile);
@@ -46,6 +56,60 @@ public class FileHandler
 		finally{
 			inputBuffer.close();
 			System.out.println("Resourses are closed ...");
+		}
+	}
+
+	public static String readFile(String file) throws IOException
+	{
+		final FileReader reader = new FileReader(file);
+		final BufferedReader buffer = new BufferedReader(reader);
+		String line;
+
+		String contents = new String();
+
+		try {
+//			for(int i = 0; i < calcLinesInTheFile(file); i++) {
+//				contents += buffer.readLine();
+//			}
+
+			line = buffer.readLine();
+
+			while(!line.equals(null)) {
+				contents += line;
+				contents += "\n";
+				line = buffer.readLine();
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (EOFException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO: handle exception
+//			e.printStackTrace();
+		} finally {
+			buffer.close();
+		}
+
+		return contents;
+	}
+
+	public static String readLine(final BufferedReader buffer) throws IOException
+	{
+		try {
+			return buffer.readLine();
+		} catch(FileNotFoundException e) {
+			// File not found
+			throw e;
+		} catch (EOFException e) {
+			// End of file
+			throw e;
+		} catch (Exception e) {
+			// Generic exception
+			throw e;
+		} finally {
+			buffer.close();
 		}
 	}
 
@@ -90,3 +154,5 @@ public class FileHandler
 	}
 
 }
+
+// Edited by Jack Durrant

@@ -1,0 +1,16 @@
+England:London
+Wales:Swansea
+Scotland:Edinburgh
+Ireland:Dublin
+France:Paris
+Spain:Madrid
+Germany:Berlin
+Sweden:Stockholm
+Finland:Helsinki
+Russia:Moscow
+China:Beijing
+South Korea:Seoul
+Japan:Tokyo
+Mexico:Mexico City
+Cuba:Havana
+Egypt:Cairo
