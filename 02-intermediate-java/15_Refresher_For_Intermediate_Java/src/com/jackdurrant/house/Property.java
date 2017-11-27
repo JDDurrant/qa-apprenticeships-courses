@@ -2,11 +2,11 @@ package com.jackdurrant.house;
 
 public class Property {
 
-	private String location;
+	private Location location;
 	private String type;
 	private int roomCount;
 
-	public Property(String location, String type, int roomCount) {
+	public Property(Location location, String type, int roomCount) {
 
 		this.setLocation(location);
 		this.setType(type);
@@ -15,18 +15,15 @@ public class Property {
 
 	public Property() {
 
-		this.setLocation("London");
-		this.setType("Flat");
-		this.setRoomCount(2);
 	}
 
 	public String toString() {
 
 		return String.format("You have a %d bedroom %s in %s.",
-				this.getRoomCount(), this.getType().toLowerCase(), this.getLocation());
+				this.getRoomCount(), this.getType().toLowerCase(), this.getLocation().getCity());
 	}
 
-	public String getLocation() {
+	public Location getLocation() {
 		return location;
 	}
 
@@ -38,7 +35,7 @@ public class Property {
 		return roomCount;
 	}
 
-	public void setLocation(String location) {
+	public void setLocation(Location location) {
 		this.location = location;
 	}
 

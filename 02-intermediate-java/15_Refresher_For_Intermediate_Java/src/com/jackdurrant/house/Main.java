@@ -22,14 +22,19 @@ public class Main {
 //
 //		System.out.println(message);
 
+		Location brighton = new Location("England", "Brighton");
+		Location glasgow = new Location("Scotland", "Glasgow");
+		Location london = new Location("England", "London");
+		Location sheffield = new Location("England", "Sheffield");
+
 		ArrayList<Property> properties = new ArrayList<>();
 
-		properties.add(new Property("Brighton", "Flat", 2));
-		properties.add(new Property("Brighton", "House", 2));
-		properties.add(new Property("Keswick", "Cottage", 2));
-		properties.add(new Property("London", "House", 3));
-		properties.add(new Property("London", "Studio", 1));
-		properties.add(new Property("Sheffield", "House", 2));
+		properties.add(new Property(brighton, "Flat", 2));
+		properties.add(new Property(brighton, "House", 2));
+		properties.add(new Property(glasgow, "Cottage", 2));
+		properties.add(new Property(london, "House", 3));
+		properties.add(new Property(london, "Studio", 1));
+		properties.add(new Property(sheffield, "House", 2));
 
 		ArrayList<Property> propertiesInLondon = findProperties(properties, "London");
 		displayProperties(propertiesInLondon);
@@ -39,7 +44,7 @@ public class Main {
 		propertyList.add(property);
 	}
 
-	public static void editProperty(Property property, String location, String type, int roomCount) {
+	public static void editProperty(Property property, Location location, String type, int roomCount) {
 		property = new Property(location, type, roomCount);
 	}
 
