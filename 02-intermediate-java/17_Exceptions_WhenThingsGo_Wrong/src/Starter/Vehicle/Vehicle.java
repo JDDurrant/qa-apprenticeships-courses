@@ -4,11 +4,13 @@ import Starter.FactoryStuff.*;
 import Starter.Main.NoMorePlatesException;
 
 public class Vehicle {
+
 	private int speed, lane;
 	private static int count;
 	private RegistrationPlate registration;
 
 	public Vehicle(int speed, int lane) throws NoMorePlatesException {
+
 		this.speed = speed;
 		this.lane = lane;
 
@@ -21,14 +23,18 @@ public class Vehicle {
 	}
 
 	public void accelerate(int amt) {
+
 		speed += amt;
+
 		if (speed > 70) {
 			speed = 70;
 		}
 	}
 
 	public void brake(int amt) {
+
 		speed -= amt;
+
 		if (speed < 0) {
 			speed = 0;
 		}
@@ -36,6 +42,7 @@ public class Vehicle {
 
 
 	public String getDetails() {
+
 		return String.format("%d,%d,%s", speed, lane,
 				registration.getRegistrationNo());
 	}
