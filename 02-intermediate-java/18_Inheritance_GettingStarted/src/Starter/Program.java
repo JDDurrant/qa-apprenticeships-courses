@@ -1,28 +1,29 @@
 package Starter;
 
-
-import java.awt.Color;
-import java.awt.Point;
-
 public class Program {
 
 	public static void main(String[] args) {
 
-         
-         
-         
+        Shape blob = new Shape();
 
+        blob.setColour(0x00ff00);
+        blob.setPosition(1, 3);
+ 		blob.printAttributes("Blob");
 
- 		System.out.printf("\nShape Characteristics\n");
- 		System.out.printf("----------------------\n");
- 		//System.out.printf("Colour:        %s\n", blob.getColour());
- 		//System.out.printf("Position:      %s\n", blob.getPosition());
- 		
- 		System.out.printf("\nCircle Characteristics\n");
- 		System.out.printf("----------------------\n");
- 		//System.out.printf("Colour:        %s\n", hoop.getColour());
- 		//System.out.printf("Position:      %s\n", hoop.getPosition());
- 		
+ 		Circle hoop = new Circle();
+
+ 		hoop.setColour(0x800000);
+ 		hoop.setPosition(3, 2);
+ 		hoop.setRadius(2.5);
+ 		hoop.printAttributes("Hoop");
+
+ 		Sphere ball = new Sphere();
+
+ 		ball.setColour(0x00ffff);
+ 		ball.setPosition(5, 0);
+ 		ball.setRadius(5);
+ 		ball.printAttributes("Ball");
+
  		System.out.println();
 
 	}
