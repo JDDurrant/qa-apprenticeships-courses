@@ -1,16 +1,17 @@
 package Starter.Vehicle;
 
 import Starter.FactoryStuff.*;
+import Starter.Main.NoMorePlatesException;
 
 public class Vehicle {
 	private int speed, lane;
 	private static int count;
 	private RegistrationPlate registration;
 
-	public Vehicle(int speed, int lane) {
+	public Vehicle(int speed, int lane) throws NoMorePlatesException {
 		this.speed = speed;
 		this.lane = lane;
-		
+
 		registration = RegistrationPlateFactory.produceNextRegistrationPlate();
 		count++;
 	}
