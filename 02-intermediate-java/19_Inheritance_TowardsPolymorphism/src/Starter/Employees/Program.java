@@ -3,15 +3,16 @@ package Starter.Employees;
 public class Program {
 
 	public static void main(String[] args) {
-//		Manager mgr 
+
+//		Manager mgr
 //		   = new Manager("Sue Dunlop", "Boss");
-//		TechnicalAuthor ta 
+//		TechnicalAuthor ta
 //		   = new TechnicalAuthor("Jim Ronald", "Technical Author");
-//		SecurityGuard secG 
+//		SecurityGuard secG
 //		   = new SecurityGuard("Bobby Gee", "Security Guard");
-//		Draughtsman drman 
+//		Draughtsman drman
 //		   = new Draughtsman("Fred Morris", "Draughtsman");
-//		Employee oj 
+//		Employee oj
 //		   = new Employee("Billy Bowen", "Office Junior");
 
 		// assign employees to manager
@@ -39,8 +40,8 @@ public class Program {
 		// drman.showInfo();
 		// oj.showInfo();
 
-		
-		
+
+
 //		Employee[] employees = { mgr, ta, secG, drman, oj };
 //		for (Employee e : employees) {
 //			e.showInfo();
