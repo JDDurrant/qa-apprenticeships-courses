@@ -48,11 +48,11 @@ public class Program {
 		drman.addSkill("CAD/CAM");
 		drman.addSkill("Mentoring");
 
-		 mgr.showInfo();
-		 ta.showInfo();
-		 secG.showInfo();
-		 drman.showInfo();
-		 oj.showInfo();
+//		 mgr.showInfo();
+//		 ta.showInfo();
+//		 secG.showInfo();
+//		 drman.showInfo();
+//		 oj.showInfo();
 
 
 
