@@ -14,7 +14,7 @@ public class Manager extends Employee
 	public void showInfo() {
 		super.showInfo();
 		System.out.printf("%s has the following employees:\n", getName());
-		for (Employee employee : employees) {
+		for (Employee employee : getEmployees()) {
 			System.out.printf("\t%s\n", employee.getName());
 		}
 	}
