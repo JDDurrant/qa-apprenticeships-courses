@@ -35,7 +35,7 @@ You are asked to design, implement and test an application to help a school libr
 * Search book menu
 * Exit
 
-After login menu, appropriatem meny will be displayed. All the menus are working as run time, displays after completion of each task. Exit option take the user to login menu.
+After login menu, appropriate menu will be displayed. All the menus are working as run time, displays after completion of each task. Exit option take the user to login menu.
 
 ## Some Suggestions - Create the following classes:
 

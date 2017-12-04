@@ -6,6 +6,10 @@ public class Library {
 
 	private static ArrayList<Book> books = new ArrayList<>();
 
+	public static void add(Book book) {
+		books.add(book);
+	}
+
 	public static Menu borrow() {
 		Menu selection = new Menu("Choose a book to borrow:");
 		for(Book book : books) {
