@@ -34,6 +34,10 @@ public class Model {
 			// 	System.out.println(query.getString("name"));
 			// }
 
+			/**
+			 * query.next() is similar to ArrayList.pop(), except that it returns a boolean stating whether there are any
+			 */
+
 		} catch(Exception e) {
 			System.out.println("Database connection failed");
 			e.printStackTrace();
