@@ -18,6 +18,10 @@ public class Model {
 	private static Connection db;
 
 	public static Connection getDB() {
+		return db;
+	}
+
+	public static void initDB() {
 
 		try {
 			// Connect to database
@@ -42,7 +46,64 @@ public class Model {
 			System.out.println("Database connection failed");
 			e.printStackTrace();
 		}
+	}
 
-		return db;
+	public static ResultSet query(String sql) throws SQLException {
+
+		ResultSet q;
+
+//		Statement stmt = db.createStatement();
+//		q = stmt.executeQuery(sql);
+
+		PreparedStatement stmt = db.prepareStatement(sql);
+		q = stmt.executeQuery();
+
+//		try {
+//			Statement stmt = db.createStatement();
+//			q = stmt.executeQuery(sql);
+//		}
+//		catch(SQLException e) {
+//
+//			q = null;
+//
+//			System.out.println("Query failed:");
+//			e.printStackTrace();
+//		}
+//		catch (Exception e) {
+//
+//			q = null;
+//
+//
+//			System.out.println("Unknown exception:");
+//			e.printStackTrace();
+//		}
+
+		return q;
+	}
+
+	public static PreparedStatement statement(String sql) throws SQLException {
+
+		PreparedStatement stmt;
+		try {
+			stmt = db.prepareStatement(sql);
+			System.out.println("Model.statement(): Assignment successful");
+		}
+		catch (Exception e) {
+			stmt = null;
+			System.out.println("Model.statement(): Assignment unsuccessful");
+		}
+
+//		try {
+//			stmt = db.prepareStatement(sql);
+//		}
+//		catch (Exception e) {
+//
+//			stmt = null;
+//
+//			System.out.println("Unknown exception:");
+//			e.printStackTrace();
+//		}
+
+		return stmt;
 	}
 }
