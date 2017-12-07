@@ -1,3 +1,5 @@
+-- mysql -u root -p < tables.sql
+
 CREATE DATABASE `school_library`;
 
 CREATE TABLE `school_library`.`user` (
@@ -31,7 +33,7 @@ CREATE TABLE `school_library`.`student` (
   PRIMARY KEY (`_id`),
   UNIQUE INDEX `_id_UNIQUE` (`_id` ASC),
   UNIQUE INDEX `user_id_UNIQUE` (`user_id` ASC),
-  INDEX `teacher_idx` (`teacher_id ASC`),
+  INDEX `teacher_idx` (`teacher_id` ASC),
   CONSTRAINT `student_user`
     FOREIGN KEY (`user_id`)
     REFERENCES `school_library`.`user` (`_id`)

@@ -4,13 +4,41 @@ import java.sql.*;
 
 public class BookModel {
 
+	private int _id;
+	private String title;
+
+	public String getTitle() {
+		return title;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	private String author;
+
+	public BookModel(String title, String author) {
+
+		this.title = title;
+		this.author = author;
+	}
+
 	public static ResultSet find(String title, String author) throws SQLException {
 
-		PreparedStatement stmt = Model.statement("SELECT * FROM `book` WHERE `title` = ? AND `author` = ?;");
-		stmt.setString(1, title);
-		stmt.setString(2, author);
+		ResultSet query;
 
-		ResultSet query = stmt.executeQuery();
+		try {
+			PreparedStatement stmt = Model.statement("SELECT * FROM `book` WHERE `title` = ? AND `author` = ?;");
+			stmt.setString(1, title);
+			stmt.setString(2, author);
+
+			query = stmt.executeQuery();
+		}
+		catch (Exception e)
+		{
+			query = null;
+			System.out.println("BookModel.find(): Query unsuccessful");
+		}
 
 		return query;
 	}

@@ -59,7 +59,7 @@ public class UserModel {
 			System.out.println("findLibrarian(): Query unsuccessful");
 		}
 
-//		query.next();
+		query.next();
 		return query;
 
 //		while (query.next()) {
