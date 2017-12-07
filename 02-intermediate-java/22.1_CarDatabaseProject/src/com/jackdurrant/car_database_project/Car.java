@@ -13,7 +13,6 @@ public class Car
 		selectRows(con);
 	}
 
-
 	public static void createTable(Connection con)
 	{
 
@@ -94,10 +93,10 @@ public class Car
 		Connection conn = null;
 
 		String url = "jdbc:mysql://localhost:3306/";
-		String dbName = "car";
+		String dbName = "cars";
 		String driver = "com.mysql.jdbc.Driver";
 		String userName = "root";
-		String password = "";
+		String password = "Pa$$w0rd";
 		try {
 			Class.forName(driver).newInstance();
 			conn = DriverManager.getConnection(url+dbName,userName,password);
