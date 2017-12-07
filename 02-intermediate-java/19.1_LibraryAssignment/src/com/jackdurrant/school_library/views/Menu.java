@@ -1,4 +1,4 @@
-package com.jackdurrant.school_library;
+package com.jackdurrant.school_library.views;
 
 import java.util.ArrayList;
 
@@ -42,5 +42,11 @@ public class Menu {
 		}
 
 		return PromptGUI.getInteger(message.toString());
+	}
+
+	public String getOption() {
+
+		int option = display();
+		return this.items.get(option);
 	}
 }

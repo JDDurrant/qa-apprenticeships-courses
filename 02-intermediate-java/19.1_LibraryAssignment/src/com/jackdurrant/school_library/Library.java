@@ -2,6 +2,8 @@ package com.jackdurrant.school_library;
 
 import java.util.ArrayList;
 
+import com.jackdurrant.school_library.views.Menu;
+
 public class Library {
 
 	private static ArrayList<Book> books = new ArrayList<>();
