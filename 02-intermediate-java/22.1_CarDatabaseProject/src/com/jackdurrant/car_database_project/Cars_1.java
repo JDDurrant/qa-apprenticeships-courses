@@ -1,3 +1,5 @@
+package com.jackdurrant.car_database_project;
+
 import java.sql.*;
 
 import javax.swing.*;
