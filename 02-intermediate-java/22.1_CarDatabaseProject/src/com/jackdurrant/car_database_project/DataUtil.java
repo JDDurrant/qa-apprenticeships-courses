@@ -9,10 +9,10 @@ public class DataUtil {
 			System.out.println("MySQL Connect Example.");
 			Connection conn = null;
 			String url = "jdbc:mysql://localhost:3306/";
-			String dbName = "test";
+			String dbName = "cars";
 			String driver = "com.mysql.jdbc.Driver";
 			String userName = "root";
-			String password = "";
+			String password = "Pa$$w0rd";
 			try {
 				Class.forName(driver).newInstance();
 				conn = DriverManager.getConnection(url+dbName,userName,password);
