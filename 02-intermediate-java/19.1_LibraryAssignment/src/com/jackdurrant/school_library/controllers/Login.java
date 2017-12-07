@@ -13,6 +13,9 @@ public class Login {
 	public static boolean login() throws SQLException {
 
 		String username = LoginMenu.getUsername();
+
+		if (username.equals("")) System.exit(0);
+
 		String password = LoginMenu.getPassword();
 
 		return authenticate(username, password);

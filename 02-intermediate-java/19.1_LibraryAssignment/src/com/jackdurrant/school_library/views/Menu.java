@@ -47,6 +47,6 @@ public class Menu {
 	public String getOption() {
 
 		int option = display();
-		return this.items.get(option);
+		return this.items.get(option - 1);
 	}
 }

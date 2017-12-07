@@ -2,13 +2,15 @@ package com.jackdurrant.school_library.views;
 
 public class BookSearchMenu {
 
-	public static void mainMenu() {
+	public static String mainMenu() {
 
-		Menu bookSearch = new Menu("Book Search");
+		Menu menu = new Menu("Book Search");
 
-		bookSearch.add("Search by book ID");
-		bookSearch.add("Search by title");
-		bookSearch.add("Search by author");
-		bookSearch.add("Back");
+		menu.add("Search by book ID");
+		menu.add("Search by title");
+		menu.add("Search by author");
+		menu.add("Back");
+
+		return menu.getOption();
 	}
 }
