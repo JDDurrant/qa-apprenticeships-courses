@@ -15,12 +15,16 @@ public class MainMenu {
 		menu.add("Back");
 
 		switch (menu.getOption()) {
-
-		case "Administration":
-			Administration.mainMenu();
-			break;
-		case "Search books":
-			BookSearchMenu.mainMenu();
+			case "Administration":
+				Administration.mainMenu();
+				break;
+			case "Borrow books":
+				break;
+			case "Search books":
+				BookSearchMenu.mainMenu();
+			case "Back":
+			default:
+				break;
 		}
 	}
 }

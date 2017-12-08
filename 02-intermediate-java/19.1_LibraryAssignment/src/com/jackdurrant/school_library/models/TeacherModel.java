@@ -16,6 +16,12 @@ public class TeacherModel {
 		System.out.println(teacher.getString("subject"));
 	}
 
+	public static ResultSet list() throws SQLException {
+
+		PreparedStatement stmt = Model.statement("SELECT `name`, `subject` FROM `teacher`;");
+		return stmt.executeQuery();
+	}
+
 	public static ResultSet find(String name) throws SQLException {
 
 		PreparedStatement stmt = Model.statement("SELECT * FROM `teacher` WHERE `name` = ?;");
@@ -47,6 +53,16 @@ public class TeacherModel {
 		stmt.setInt(1, user.getInt("_id"));
 		stmt.setString(2, name);
 		stmt.setString(3, subject);
+
+		return stmt.execute();
+	}
+
+	public static boolean remove(String name) throws SQLException {
+		// TODO: Modify this method to also remove the teacher's record in the user table
+		PreparedStatement stmt = Model.statement(
+				"DELETE FROM `teacher` WHERE `name` = ?");
+
+		stmt.setString(1, name);
 
 		return stmt.execute();
 	}
