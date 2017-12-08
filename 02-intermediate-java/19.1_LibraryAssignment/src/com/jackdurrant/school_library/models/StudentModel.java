@@ -36,13 +36,23 @@ public class StudentModel {
 		return stmt.execute();
 	}
 
-	public static boolean remove(String name) throws SQLException {
-		// TODO: Modify this method to also remove the student's record in the user table
-		PreparedStatement stmt = Model.statement(
-				"DELETE FROM `student` WHERE `name` = ?");
+	public static void remove(String name) throws SQLException {
 
-		stmt.setString(1, name);
+		PreparedStatement findStudent = Model.statement("SELECT `_id`, `user_id` FROM `student` WHERE `name` = ?");
+		findStudent.setString(1, name);
 
-		return stmt.execute();
+		ResultSet student = findStudent.executeQuery();
+		student.next();
+
+		int studentID = student.getInt("_id");
+		int userID = student.getInt("user_id");
+
+		PreparedStatement deleteStudent = Model.statement("DELETE FROM `student` WHERE `_id` = ?");
+		deleteStudent.setInt(1, studentID);
+		deleteStudent.execute();
+
+		PreparedStatement deleteUser = Model.statement("DELETE FROM `user` WHERE `_id` = ?");
+		deleteUser.setInt(1, userID);
+		deleteUser.execute();
 	}
 }

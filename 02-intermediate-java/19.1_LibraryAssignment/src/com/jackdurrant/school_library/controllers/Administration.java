@@ -67,11 +67,11 @@ public class Administration {
 		return TeacherModel.add(name, username, password, subject);
 	}
 
-	public static boolean removeTeacher() throws SQLException {
+	public static void removeTeacher() throws SQLException {
 
 		String name = PromptGUI.getString("Enter their name");
 
-		return TeacherModel.remove(name);
+		TeacherModel.remove(name);
 	}
 
 	public static void listStudents() throws SQLException {
@@ -99,10 +99,10 @@ public class Administration {
 		return StudentModel.add(studentName, studentUsername, studentPassword, teacherName);
 	}
 
-	public static boolean removeStudent() throws SQLException {
+	public static void removeStudent() throws SQLException {
 
 		String name = PromptGUI.getString("Enter their name");
 
-		return StudentModel.remove(name);
+		StudentModel.remove(name);
 	}
 }
