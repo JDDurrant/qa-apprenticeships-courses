@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 import com.jackdurrant.io.PromptGUI;
 import com.jackdurrant.school_library.controllers.Login;
+import com.jackdurrant.school_library.models.BookSearch;
 import com.jackdurrant.school_library.models.Model;
 //import com.jackdurrant.school_library.user_access.Student;
 //import com.jackdurrant.school_library.user_access.Teacher;
@@ -32,7 +33,7 @@ public class Main {
 				MainMenu.mainMenu();
 				break;
 			case "student":
-				BookSearchMenu.mainMenu();
+				BookSearch.mainMenu();
 				break;
 			}
 		}

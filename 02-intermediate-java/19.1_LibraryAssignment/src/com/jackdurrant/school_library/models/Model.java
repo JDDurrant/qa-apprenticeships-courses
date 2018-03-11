@@ -8,6 +8,7 @@ import java.sql.*;
  *
  * Example:
  * SELECT name, email FROM user WHERE id = 001;
+ * SELECT * FROM user;
  *
  * @author Administrator
  *

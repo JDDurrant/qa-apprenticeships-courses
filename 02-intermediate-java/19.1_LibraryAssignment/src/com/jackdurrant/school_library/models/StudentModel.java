@@ -38,8 +38,7 @@ public class StudentModel {
 
 	public static boolean remove(String name) throws SQLException {
 		// TODO: Modify this method to also remove the student's record in the user table
-		PreparedStatement stmt = Model.statement(
-				"DELETE FROM `student` WHERE `name` = ?");
+		PreparedStatement stmt = Model.statement("DELETE FROM `student` WHERE `name` = ?;");
 
 		stmt.setString(1, name);
 

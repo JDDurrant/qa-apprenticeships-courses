@@ -6,6 +6,7 @@ public class AdministrationMenu {
 
 		Menu menu = new Menu("Administration");
 
+		menu.add("List books");
 		menu.add("Add a book");
 		menu.add("Remove a book");
 

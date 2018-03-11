@@ -3,19 +3,27 @@ package com.jackdurrant.school_library.controllers;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.jackdurrant.io.Prompt;
 import com.jackdurrant.io.PromptGUI;
+import com.jackdurrant.school_library.models.BookModel;
 import com.jackdurrant.school_library.models.StudentModel;
 import com.jackdurrant.school_library.models.TeacherModel;
 import com.jackdurrant.school_library.views.AdministrationMenu;
+import com.jackdurrant.school_library.views.MainMenu;
 
 public class Administration {
 
 	public static void mainMenu() throws SQLException {
 
 		switch (AdministrationMenu.mainMenu()) {
+			case "List books":
+				listBooks();
+				break;
 			case "Add a book":
+				addBook();
 				break;
 			case "Remove a book":
+				removeBook();
 				break;
 			case "List teachers":
 				listTeachers();
@@ -35,10 +43,43 @@ public class Administration {
 			case "Remove a student":
 				removeStudent();
 				break;
-			case "Exit":
+			case "Back":
+				MainMenu.mainMenu();
+				break;
 			default:
 				System.exit(0);
 		}
+	}
+
+	public static void listBooks() throws SQLException {
+
+		StringBuilder books = new StringBuilder("Books:\n");
+		ResultSet query = BookModel.list();
+
+		while(query.next()) {
+			String title = query.getString("title");
+			String author = query.getString("author");
+
+			books.append(String.format("%s by %s\n", title, author));
+		}
+
+		PromptGUI.alert(books.toString());
+	}
+
+	public static boolean addBook() throws SQLException {
+
+		String title = PromptGUI.getString("Enter the title");
+		String author = PromptGUI.getString("Enter the author");
+		int quantity = PromptGUI.getInteger("Enter the quantity of copies");
+
+		return BookModel.add(title, author);
+	}
+
+	public static boolean removeBook() throws SQLException {
+
+		String title = PromptGUI.getString("Enter the title");
+
+		return BookModel.remove(title);
 	}
 
 	public static void listTeachers() throws SQLException {
