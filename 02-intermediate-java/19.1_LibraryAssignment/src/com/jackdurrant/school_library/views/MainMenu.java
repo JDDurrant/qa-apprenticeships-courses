@@ -3,7 +3,8 @@ package com.jackdurrant.school_library.views;
 import java.sql.SQLException;
 
 import com.jackdurrant.school_library.controllers.Administration;
-import com.jackdurrant.school_library.models.BookSearch;
+import com.jackdurrant.school_library.controllers.BookSearch;
+import com.jackdurrant.school_library.controllers.Borrowing;
 
 public class MainMenu {
 
@@ -20,6 +21,7 @@ public class MainMenu {
 				Administration.mainMenu();
 				break;
 			case "Borrow books":
+				Borrowing.mainMenu();
 				break;
 			case "Search books":
 				BookSearch.mainMenu();

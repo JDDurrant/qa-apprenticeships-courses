@@ -1,6 +1,7 @@
-package com.jackdurrant.school_library.models;
+package com.jackdurrant.school_library.controllers;
 
 import com.jackdurrant.io.PromptGUI;
+import com.jackdurrant.school_library.models.BookModel;
 import com.jackdurrant.school_library.views.BookSearchMenu;
 
 import java.sql.ResultSet;
