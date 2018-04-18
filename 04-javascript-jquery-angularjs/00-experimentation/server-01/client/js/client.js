@@ -1,0 +1,1 @@
+import '../bin/client.js';

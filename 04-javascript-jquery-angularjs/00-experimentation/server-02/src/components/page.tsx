@@ -8,8 +8,10 @@ export default class Page extends React.Component {
 			<html>
 				<head>
 					<meta charSet="utf-8" />
+					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 					<title>Hello, World!</title>
-					<script src="/res/client.js" />
+					<link rel="stylesheet" href="/res/css/main.css" />
+					<script src="/res/js/client.js" />
 				</head>
 				<body>
 					<App />

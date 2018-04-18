@@ -1,0 +1,14 @@
+.layout-scale(@screen-width, @app-width) {
+    @media (min-width: @screen-width) {
+        width: @app-width;
+    }
+}
+
+.app {
+    background: #0ff;
+    font-family: sans-serif;
+    margin: auto;
+
+    .layout-scale(200px, 100%);
+    .layout-scale(1200px, 1200px);
+}
