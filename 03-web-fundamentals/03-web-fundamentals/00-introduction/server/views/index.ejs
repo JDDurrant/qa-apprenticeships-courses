@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/js/script.js"></script>
+</head>
+<body>
+    <div class="wrapper" id="wrapper">
+        <header>
+            <h1>Welcome to my website!</h1>
+        </header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/customers">Customers</a>
+            <a href="#">About</a>
+            <a href="#">Store</a>
+        </nav>
+        <main>
+            <h2>Hello, World!</h2>
+        </main>
+        <aside>
+            <h2>Contact me</h2>
+            <div class="message" id="contact-submit-message"></div>
+            <form action="/contact" method="POST" id="contact-form">
+                <input type="text" name="name" id="name-input" placeholder="Name">
+                <input type="text" name="email" id="email-input" placeholder="Email">
+                <textarea name="message" id="message-textarea" placeholder="Message"></textarea>
+                <button type="submit" id="contact-submit">Submit</button>
+            </form>
+        </aside>
+        <footer>
+            
+        </footer>
+    </div>
+</body>
+</html>

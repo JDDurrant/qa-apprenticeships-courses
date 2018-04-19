@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+	<meta charset="utf-8" />
+	<title>Order Service</title>
+	<base href="/" />
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="/js/app.js"></script>
+</head>
+<body>
+	<div class="wrapper" data-ng-controller="Order as order" data-ng-init="order.listOrders()">
+		<header class="header">
+			<h1 class="header-h1">Order Service</h1>
+			<button class="header-button" data-ng-click="order.hideOrderDetails()">
+				<i class="fa fa-times-circle"></i>
+			</button>
+		</header>
+		<div class="orders">
+			<ul class="orders-list">
+				<li class="orders-list-item" data-id="{{$order.OrderID}}"
+					data-ng-class="{selected: $order.selected}"
+					data-ng-click="order.showOrderDetails($event, $order.OrderID)"
+					data-ng-repeat="$order in orders">
+					<p>
+						<strong>Order details:</strong><br />
+						Customer ID: {{ $order.CustomerID }}<br />
+						Employee ID: {{ $order.EmployeeID }}<br />
+						Shipped via: {{ $order.ShipVia }}
+					</p>
+					<p>
+						<strong>Ship:</strong> {{ $order.ShipName }}
+					</p>
+					<p>
+						<strong>Address:</strong><br />
+						{{ $order.ShipAddress }}<br />
+						{{ $order.ShipCity }} {{ $order.ShipPostalCode }}<br />
+						<span data-ng-if="$order.ShipRegion">{{ $order.ShipRegion }}<br /></span>
+						{{ $order.ShipCountry }}<br />
+					</p>
+					<p>
+						<span class="orders-list-item-link">View order &raquo;</span>
+					</p>
+				</li>
+			</ul>
+		</div>
+		<div class="order-details">
+			<ul class="order-details-list">
+				<li class="order-details-list-item" ng-repeat="$item in orderDetails">
+					<h2 class="order-details-list-item-title">{{ $item.ProductName }}</h2>
+					<div class="order-details-list-item-section">
+						<strong>Unit price:</strong> {{ $item.OrderUnitPrice }}<br />
+						<strong>Discount:</strong> {{ $item.Discount }}<br />
+						<strong>Product ID:</strong> {{ $item.ProductID }}<br />
+						<strong>Supplier ID:</strong> {{ $item.SupplierID }}<br />
+						<strong>Category ID:</strong> {{ $item.CategoryID }}<br />
+						<strong>Quantity per unit:</strong> {{ $item.QuantityPerUnit }}<br />
+					</div>
+					<div class="order-details-list-item-section">
+						<strong>Units in stock:</strong> {{ $item.UnitsInStock }}<br />
+						<strong>Units on order:</strong> {{ $item.UnitsOnOrder }}<br />
+						<strong>Reorder level:</strong> {{ $item.ReorderLevel }}<br />
+						<strong data-ng-if="$item.Discontinued">Discontinued</strong>
+					</div>
+					<div class="order-details-list-item-footer">
+						<hr />
+						<div class="order-details-list-item-price">
+							<strong>Quantity:</strong> {{ $item.Quantity }} |
+							<strong>Price:</strong> ${{ $item.UnitPrice.toFixed(2) }}
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

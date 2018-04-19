@@ -1,4 +1,4 @@
-import * as $ from 'jquery';
+import * as axios from 'axios';
 import * as React from 'react';
 
 import UserDetails from './user/details/user-details';
@@ -16,7 +16,18 @@ export default class App extends React.Component {
 			<UserDetails component={component} />
 			<button onClick={component.message}>Click me!</button>
 			<noscript>
-				This site is set up to work without JavaScript. However, for the best experience, we encourage you to enable JavaScript for this website.
+				Please enable JavaScript to enjoy the full experience of this web application.
+			</noscript>
+		</div>
+	);
+
+	template2 = (
+		<div className="app">
+			<h1>Hello, World!</h1>
+			<UserList component={this} />
+			<button onClick={this.message}>Click me!</button>
+			<noscript>
+			Please enable JavaScript to enjoy the full experience of this web application.
 			</noscript>
 		</div>
 	);
@@ -34,33 +45,12 @@ export default class App extends React.Component {
 	};
 
 	render() {
-		return this.template(this);
+		// return this.template(this);
+		return this.template2;
 	}
 
 	// Client
 	message() {
 		alert('Clicked');
-	}
-
-	listUsers(event) {
-		event.preventDefault();
-		
-		const $users = $.get('/api/users');
-		$users.done(users => {
-			this.setState({
-				users: users
-			});
-		});
-	}
-
-	userDetails(index, event) {
-		event.preventDefault();
-		
-		const $user = $.get(`/api/user/${index}`);
-		$user.then(user => {
-			this.setState({
-				userDetails: user
-			});
-		});
 	}
 }

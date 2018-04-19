@@ -1,0 +1,151 @@
+﻿body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    margin: auto;
+    width: 960px;
+}
+
+.header {
+    background: #f5f5f5;
+    overflow: auto;
+    width: 100%;
+}
+
+.header-h1 {
+    float: left;
+    padding: 0 16px;
+}
+
+.header-button {
+    background: none;
+    border: none;
+    float: right;
+    font-size: 21px;
+    padding: 6px 12px;
+    transition: color 0.3s;
+}
+
+.header-button:hover {
+    color: #00f;
+}
+
+.header-button:active {
+    color: #008;
+}
+
+.header-button:focus {
+    outline: none;
+}
+
+.orders {
+    float: left;
+    width: 320px;
+}
+
+.orders-list {
+    background: #fdfdfd;
+    height: calc(100% - 37px);
+    margin: 0;
+    overflow: auto;
+    padding: 0;
+    position: absolute;
+    width: 320px;
+}
+
+.orders-list-item {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 16px;
+    padding: 0 16px;
+    list-style-type: none;
+    transition: border 0.3s;
+}
+
+.orders-list-item:hover {
+    border: 1px solid #00f;
+}
+
+.orders-list-item:hover .orders-list-item-link {
+    color: #00f;
+}
+
+.orders-list-item:active {
+    border: 1px solid #008;
+}
+
+.orders-list-item:active .orders-list-item-link {
+    color: #008;
+}
+
+.orders-list-item.selected {
+    border: 1px solid #00f;
+}
+
+.orders-list-item.selected .orders-list-item-link {
+    color: #00f;
+    transition: border 0.3s;
+}
+
+.orders-list-item-link {
+    /* color: #00f; */
+    display: block;
+    text-align: right;
+    transition: color 0.075s;
+}
+
+.order-details {
+    float: right;
+    width: 640px;
+}
+
+.order-details-list {
+    background: #fbfbfb;
+    height: calc(100% - 37px);
+    margin: 0;
+    overflow: auto;
+    padding: 0;
+    position: absolute;
+    width: 640px;
+}
+
+.order-details-list-item {
+    background: #fafafa;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    margin: 16px;
+    overflow: auto;
+    padding: 12px 16px 8px;
+    list-style-type: none;
+}
+
+.order-details-list-item-title {
+    margin: 0 0 8px;
+}
+
+.order-details-list-item-section {
+    float: left;
+    /* padding: 0 8px; */
+    width: 50%;
+}
+
+.order-details-list-item-footer {
+    overflow: auto;
+    width: 100%;
+}
+
+.order-details-list-item-price {
+    float: right;
+}

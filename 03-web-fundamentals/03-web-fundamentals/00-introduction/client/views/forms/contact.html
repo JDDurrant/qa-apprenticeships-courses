@@ -1,0 +1,10 @@
+<form action="/contact" method="POST" id="contact-form" 
+    data-ng-submit="contact.submit($event, $form)">
+    <input type="text" name="name" id="name-input" placeholder="Name"
+        data-ng-model="$form.name">
+    <input type="email" name="email" id="email-input" placeholder="Email"
+        data-ng-model="$form.email">
+    <textarea name="message" id="message-textarea" placeholder="Message"
+        data-ng-model="$form.message"></textarea>
+    <button type="submit" id="contact-submit">Submit</button>
+</form>
