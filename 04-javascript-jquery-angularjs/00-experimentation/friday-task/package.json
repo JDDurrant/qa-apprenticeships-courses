@@ -1,0 +1,19 @@
+{
+  "name": "city-project",
+  "version": "0.1.0",
+  "description": "City project for QA Apprenticeships",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "nodemon server/server.js"
+  },
+  "author": "Jack Durrant",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  }
+}

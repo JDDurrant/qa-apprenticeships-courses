@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="app" data-ng-controller="main">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="/js/client.js" type="module"></script>
+</head>
+<body>
+    <main class="main">
+        <header class="header">
+            <h1>{{ title }}</h1>
+        </header>
+        <section class="details"
+            data-ng-if="current"
+            data-ng-include="'/views/details.html'"></section>
+        <section class="section attractions"
+            data-ng-controller="attractions"
+            data-ng-include="'/views/list.html'"></section>
+        <section class="section buildings"
+            data-ng-controller="buildings"
+            data-ng-include="'/views/list.html'"></section>
+    </main>
+</body>
+</html>

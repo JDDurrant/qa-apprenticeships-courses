@@ -1,0 +1,12 @@
+<header class="section-header">
+    <h2>{{ title }}</h2>
+</header>
+<ul class="section-list">
+    <li class="section-list-item" data-ng-repeat="$item in data">
+        <a href="/{{ controller }}/{{ $item.slug }}" class="section-list-item-link"
+            data-ng-click="displayDetails($item, $event)">
+            <img src="{{ $item.image }}" alt="{{ $item.name }}" class="section-list-item-image" />
+            <span class="section-list-item-title">{{ $item.name }}</span>
+        </a>
+    </li>
+</ul>

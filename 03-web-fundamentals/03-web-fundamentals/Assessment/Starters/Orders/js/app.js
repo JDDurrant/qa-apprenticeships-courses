@@ -1,8 +1,6 @@
 ﻿const app = angular.module('app', []);
 
 app.controller('Order', function OrderController($scope, $http) {
-
-	// let selected;
 	
 	this.listOrders = $event => {
 		const request = $http.get('/OrdersService.asmx/getOrders');
